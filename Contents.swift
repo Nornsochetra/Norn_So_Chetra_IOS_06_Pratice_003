@@ -9,7 +9,7 @@ class Stock {
     var fruit: [String] = ["Apple", "Banana", "Orange"]
     func accessStock(index: Int) throws {
         let countFruit = fruit.count
-        if index > countFruit {
+        if index >= countFruit {
             throw IndexError.indexOutOfBound
         }
         if index < 0 {
@@ -21,7 +21,7 @@ class Stock {
 
 do {
     let stock = Stock()
-    try stock.accessStock(index: 4)
+    try stock.accessStock(index: -1)
 }catch IndexError.indexOutOfBound{
     print("Array is out of bounds")
 }
